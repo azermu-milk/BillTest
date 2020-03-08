@@ -38,8 +38,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/regist").permitAll()
                 .antMatchers("/index.html").permitAll()
+                .antMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
                 .anyRequest().authenticated()
                 .and()
-                .csrf().disable();
+                .logout().permitAll()
+                .and()
+                .csrf().disable()
+                .exceptionHandling().accessDeniedPage("/no_permit");
     }
 }

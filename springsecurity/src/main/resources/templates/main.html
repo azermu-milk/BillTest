@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>main</title>
 </head>
 <body>
 <h1>main</h1>
+<a th:href="@{/admin/main}" type="button">
+    <button>main</button>
+</a>
+<a th:href="@{/logout}">
+    <button>logout</button>
+</a>
 </body>
 </html>
